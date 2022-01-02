@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
+import { ServerStyleSheets } from '@mui/styles';
 import {theme, createEmotionCache} from '@/configs/theme';
 
 class MyDocument extends Document {
@@ -34,11 +35,13 @@ MyDocument.getInitialProps = async (ctx) => {
   const cache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
+  const sheets = new ServerStyleSheets();
+
   ctx.renderPage = () =>
     originalRenderPage({
       enhanceApp: (App: any) =>
         function EnhanceApp(props) {
-          return <App emotionCache={cache} {...props} />;
+          return sheets.collect(<App emotionCache={cache} {...props} />);
         },
     });
 
@@ -51,10 +54,12 @@ MyDocument.getInitialProps = async (ctx) => {
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));
+  const styles = [sheets.getStyleElement()]
 
   return {
     ...initialProps,
     emotionStyleTags,
+    styles
   };
 };
 
