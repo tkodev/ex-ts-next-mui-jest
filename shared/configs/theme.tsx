@@ -22,7 +22,9 @@ const createEmotionTags = (emotionCache: EmotionCache, html: string) => {
 }
 
 const theme = createTheme({
-  // Create a theme instance.
+  palette: {
+    mode: 'dark'
+  }
 })
 
 export { theme, createEmotionCache, createEmotionTags }
