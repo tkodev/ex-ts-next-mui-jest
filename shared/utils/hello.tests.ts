@@ -1,5 +1,5 @@
 import { getHello } from "./hello";
-import { mockHello } from '@/mocks/hello'
+import { mockHello } from '@/shared/constants/hello'
 
 describe("#getHello", () => {
   it("returns the correct string", () => {

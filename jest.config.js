@@ -10,11 +10,11 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   // defaults
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  moduleDirectories: ['node_modules', '<rootDir>/'], // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
   testEnvironment: 'jest-environment-jsdom',
+  clearMocks: true,
 
   // options
-  clearMocks: true,
+  moduleDirectories: ['node_modules', '<rootDir>/'], // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
