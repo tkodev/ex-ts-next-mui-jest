@@ -11,10 +11,10 @@ const useSx = (props: ExampleProps) => ({
 
 const Example: React.FC<ExampleProps> = (props) => {
   const { children } = props
-  const styles = useSx(props)
+  const sx = useSx(props)
 
   return (
-    <Box sx={styles.root}>
+    <Box sx={sx.root}>
       example
       {children}
     </Box>

@@ -20,10 +20,10 @@ const useSx = (props: PageProps) => ({
 
 const Page: React.FC<PageProps> = (props) => {
   const { title, desc, children } = props
-  const styles = useSx(props)
+  const sx = useSx(props)
 
   return (
-    <Box sx={styles.root}>
+    <Box sx={sx.root}>
       <Head>
         {title && <title>{title}</title>}
         {desc && <meta name="description" content={desc} />}
