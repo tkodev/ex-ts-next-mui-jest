@@ -1,6 +1,6 @@
 {
   "name": "ex-ts-next-mui-jest",
-  "description": "⚡ Boilerplate for TS + Next 12 + MUI 5 + Jest + Testing Library",
+  "description": "🍳 Boilerplate for TS + Next 12 + MUI 5 + Jest + Testing Library",
   "private": true,
   "scripts": {
     "dev": "next dev",
