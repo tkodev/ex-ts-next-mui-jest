@@ -5,12 +5,12 @@ import { Footer } from '@/components/organisms/footer'
 import { Main } from '@/components/organisms/main'
 import { Box } from '@mui/material'
 
-type LayoutProps = {
+type PageProps = {
   title?: string
   desc?: string
 }
 
-const useSx = (props: LayoutProps) => ({
+const useSx = (props: PageProps) => ({
   root: {
     display: 'grid',
     height: '100vh',
@@ -18,7 +18,7 @@ const useSx = (props: LayoutProps) => ({
   }
 })
 
-const Layout: React.FC<LayoutProps> = (props) => {
+const Page: React.FC<PageProps> = (props) => {
   const { title, desc, children } = props
   const styles = useSx(props)
 
@@ -31,9 +31,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
       <Header />
       <Main>{children}</Main>
       <Footer />
-      layout
+      Page
     </Box>
   )
 }
 
-export { Layout }
+export { Page }
