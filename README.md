@@ -1,13 +1,37 @@
-# site-juno
-⚡ Codebase for Tony Ko's personal dashboard
+# ex-ts-next-mui-jest
+🍳 Boilerplate for TS + Next 12 + MUI 5 + Jest + Testing Library
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Features
+- General
+  - Typescript, Next 12.1
+  - Jest with Testing Library Support
+  - Mui 5 theme, sx and font support
+  - `@/` project root alias for ts, jest and babel 
+- `./components`
+  - Atomic Design component structure with Mui 5 examples
+- `./conductors`
+  - Controller & Services api structure
+- `./pages`:
+  - `./_app.tsx` and `./_document.tsx`: 
+    - Style tag rendering / fonts / themes
+  - `./api/`: 
+    - Next-Connect for express like / connect style api middleware
+    - Use controllers and services here
+  - `./index.tsx`: 
+    - Use components here
+- `./public` 
+  - files to be copied to `/` path of built app
+- `./shared`
+  - configs, constants, types and utils
+
 ## Getting Started
 
-First, run the development server:
+First, install and run the development server:
 
 ```bash
+yarn install
 yarn dev
 ```
 
