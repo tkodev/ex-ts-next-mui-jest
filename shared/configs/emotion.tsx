@@ -1,4 +1,3 @@
-import { createTheme } from '@mui/material/styles'
 import createCache from '@emotion/cache'
 import { EmotionCache } from '@emotion/react'
 import createEmotionServer from '@emotion/server/create-instance'
@@ -21,10 +20,4 @@ const createEmotionTags = (emotionCache: EmotionCache, html: string) => {
   return emotionTags
 }
 
-const theme = createTheme({
-  palette: {
-    mode: 'dark'
-  }
-})
-
-export { theme, createEmotionCache, createEmotionTags }
+export { createEmotionCache, createEmotionTags }
